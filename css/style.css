@@ -5,14 +5,14 @@ body {
 .contenedor {
   max-width: 90%;
   width: 1200px;
-  margin: 2rem auto;
+  margin: 2rem auto 10rem;
 }
 
 .footer {
-  position: absolute;
-  bottom: -5rem;
-  width: 100vw;
-  margin: 5rem auto 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 1rem auto 0;
   background-color: #272d2d;
   color: aliceblue;
   padding: 2rem 0;
