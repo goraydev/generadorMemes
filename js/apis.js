@@ -26,7 +26,7 @@ export function generarMeme() {
     myHeaders.append("Cookie", "claim_key=I6gbyr2m6v2i3BbOSarjRQjOyApWEPtU");
 
     var formdata = new FormData();
-    formdata.append("template_id", "181913649");
+    formdata.append("template_id", idMeme);
     formdata.append("username", "toheneb279");
     formdata.append("password", "toheneb279");
     formdata.append("boxes[0][text]", "regueton");
