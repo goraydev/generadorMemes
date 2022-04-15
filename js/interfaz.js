@@ -28,8 +28,8 @@ export function mostrarMemes(resultado) {
         div.appendChild(img);
         div.appendChild(pName);
         div.appendChild(a);
-
         contenenedorMemes.appendChild(div);
+
 
     });
 }

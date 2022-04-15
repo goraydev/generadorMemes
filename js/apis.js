@@ -1,5 +1,4 @@
-import { campos } from "./generarMeme.js";
-import { crearCajasTexto, mostrarMemes } from "./interfaz.js";
+import { mostrarMemes } from "./interfaz.js";
 
 //verificar el ID de la URL
 //window.location.search nos devuelve la respuesta a la pregunta en nuestro caso sería id
@@ -22,7 +21,7 @@ export function consultaMemes() {
 
 }
 
-export function generarMeme() {
+export function generarMeme(campos) {
     console.log(campos);
 
     let myHeaders = new Headers();
@@ -33,15 +32,11 @@ export function generarMeme() {
     formdata.append("username", "toheneb279");
     formdata.append("password", "toheneb279");
 
-    for (let i = 0; i < campos.length; i++) {
-        
+    //de acuerdo a la cantidad de texto que envio mostraremos la imagen
 
+    for (let i = 0; i <= campos.length; i++) {
+        formdata.append(`boxes[${i}][text]`, campos[i]);
     }
-
-    formdata.append("boxes[0][text]", "gerson");
-    formdata.append("boxes[2][text]", "yo");
-    formdata.append("boxes[3][text]", "claro");
-    formdata.append("boxes[4][text]", "si");
 
     let requestOptions = {
         method: 'POST',

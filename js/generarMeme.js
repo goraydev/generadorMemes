@@ -3,7 +3,7 @@ import { crearCajasTexto, formulario, mostrarAlerta } from "./interfaz.js";
 
 const btnCrear = document.querySelector('#crear');
 const contenedorImagen = document.querySelector('#contenedorImagen');
-export let campos = [];
+let campos = [];
 
 eventListeners();
 function eventListeners() {
@@ -40,8 +40,7 @@ function validarIngreso(e) {
 
         campos = [...campos, caja[i].value];
     }
-    
-    generarMeme();
+    generarMeme(campos);
 
 
 }
