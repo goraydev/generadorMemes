@@ -1,4 +1,13 @@
-import { mostrarMemes } from "./interfaz.js";
+import { crearCajasTexto, mostrarMemes } from "./interfaz.js";
+
+//verificar el ID de la URL
+//window.location.search nos devuelve la respuesta a la pregunta en nuestro caso sería id
+export const parametrosURL = new URLSearchParams(window.location.search);
+export let idMeme = Number(parametrosURL.get('id'));
+export let boxCount = Number(parametrosURL.get('box_count'));
+export let urlImagen = parametrosURL.get('url');
+
+
 
 export function consultaMemes() {
     const url = 'https://api.imgflip.com/get_memes';
@@ -13,14 +22,10 @@ export function consultaMemes() {
 }
 
 export function generarMeme() {
-
-    //verificar el ID de la URL
-    //window.location.search nos devuelve la respuesta a la pregunta en nuestro caso sería id
-    const parametrosURL = new URLSearchParams(window.location.search);
-    let idMeme = parametrosURL.get('id');
-    let boxCount = parametrosURL.get('box_count');
-
     console.log(idMeme, boxCount);
+    console.log(urlImagen);
+
+    crearCajasTexto(boxCount);
 
     let myHeaders = new Headers();
     myHeaders.append("Cookie", "claim_key=I6gbyr2m6v2i3BbOSarjRQjOyApWEPtU");

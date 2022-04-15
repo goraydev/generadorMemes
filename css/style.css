@@ -18,3 +18,12 @@ body {
   padding: 2rem 0;
   text-align: center;
 }
+
+#formulario {
+  grid-column: 2/3;
+}
+
+input[type="text"] {
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+}

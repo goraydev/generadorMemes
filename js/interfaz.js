@@ -1,4 +1,6 @@
 const contenenedorMemes = document.querySelector('#memes');
+export const formulario = document.querySelector('#formulario');
+
 export function mostrarMemes(resultado) {
 
     const { data: { memes } } = resultado;
@@ -18,8 +20,8 @@ export function mostrarMemes(resultado) {
         pName.textContent = `${name.slice(0, 20)}...`;
 
         const a = document.createElement('a');
-        a.className = 'p-2 bg-green-600 block w-full text-center text-white relative bottom-0'
-        a.href = `generarMeme.html?id=${id}&box_count=${box_count}`;
+        a.className = 'p-2 bg-blue-500 block w-full text-center text-white relative bottom-0'
+        a.href = `generarMeme.html?id=${id}&box_count=${box_count}&url=${url}`;
         a.textContent = 'Generar';
 
         div.appendChild(img);
@@ -29,7 +31,31 @@ export function mostrarMemes(resultado) {
         contenenedorMemes.appendChild(div);
 
     });
+}
 
 
+export function crearCajasTexto(cantidad) {
+
+
+    for (let i = 0; i <= cantidad; i++) {
+        const div = document.createElement('div');
+        div.className = 'my-3';
+        const inputCaja = document.createElement('input');
+        inputCaja.type = 'text';
+        inputCaja.placeholder = 'Ingrese texto';
+        inputCaja.id = i;
+
+
+        div.appendChild(inputCaja);
+
+        formulario.appendChild(div);
+    }
+
+    const inputSubmit = document.querySelector('input');
+    inputSubmit.type = 'submit';
+    inputSubmit.value = 'Crear meme';
+    inputSubmit.className = 'bg-blue-500 py-1 px-2 cursor-pointer rounded';
+
+    formulario.appendChild(inputSubmit);
 
 }
