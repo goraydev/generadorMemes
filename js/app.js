@@ -1,4 +1,5 @@
 import { consultaMemes } from "./apis.js";
+export const year = document.querySelector('#year');
 
 
 eventListeners();

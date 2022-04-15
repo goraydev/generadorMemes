@@ -34,8 +34,17 @@
     </div>
 
     <footer class="footer">
-      <p>Diseñado y desarrollado por Gerson Aguedo Yanac | GorayCode</p>
+      <p>
+        Todos los derechos reservados&copy;<span id="year"></span> Diseñado y
+        desarrollado por Gerson Aguedo Yanac | GorayCode
+      </p>
     </footer>
+
+    <script>
+      const yearSpan = document.querySelector("#year");
+      let date = new Date().getFullYear();
+      yearSpan.textContent = date;
+    </script>
     <script src="js/generarMeme.js" type="module"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
