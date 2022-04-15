@@ -1,3 +1,5 @@
+import { resultado } from "./apis.js";
+
 const contenenedorMemes = document.querySelector('#memes');
 export const formulario = document.querySelector('#formulario');
 
@@ -68,4 +70,22 @@ export function mostrarAlerta() {
         title: 'Oops...',
         text: 'Complete los campos',
     })
+}
+
+
+
+export function mostrarResultado(url) {
+    const div = document.createElement('div');
+    const img = document.createElement('img');
+    img.src = url;
+
+    div.appendChild(img);
+    limpiarHtml();
+    resultado.appendChild(div);
+}
+
+function limpiarHtml() {
+    while (resultado.firstChild) {
+        resultado.removeChild(resultado.firstChild);
+    }
 }

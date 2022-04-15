@@ -1,4 +1,4 @@
-import { mostrarMemes } from "./interfaz.js";
+import { mostrarMemes, mostrarResultado } from "./interfaz.js";
 
 //verificar el ID de la URL
 //window.location.search nos devuelve la respuesta a la pregunta en nuestro caso sería id
@@ -6,6 +6,7 @@ export const parametrosURL = new URLSearchParams(window.location.search);
 export let idMeme = Number(parametrosURL.get('id'));
 export let boxCount = Number(parametrosURL.get('box_count'));
 export let urlImagen = parametrosURL.get('url');
+export const resultado = document.querySelector('#resultado');
 
 
 
@@ -32,7 +33,9 @@ export function generarMeme(campos) {
     formdata.append("username", "toheneb279");
     formdata.append("password", "toheneb279");
 
-    //de acuerdo a la cantidad de texto que envio mostraremos la imagen
+    /* de acuerdo a la cantidad de texto que envio mostraremos la imagen
+        y la mostraremos
+    */
 
     for (let i = 0; i <= campos.length; i++) {
         formdata.append(`boxes[${i}][text]`, campos[i]);
@@ -49,7 +52,7 @@ export function generarMeme(campos) {
         .then(response => response.json())
         .then(result => {
             console.log(result.data.url);
-            console.log(result)
+            mostrarResultado(result.data.url)
         })
         .catch(error => console.log('error', error));
 }

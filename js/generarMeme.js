@@ -40,8 +40,19 @@ function validarIngreso(e) {
 
         campos = [...campos, caja[i].value];
     }
+
     generarMeme(campos);
 
+    limpiarFormulario();
 
 }
+
+
+
+
+function limpiarFormulario() {
+    campos = [];
+    formulario.reset();
+}
+
 
