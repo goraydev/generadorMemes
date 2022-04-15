@@ -37,7 +37,7 @@ export function generarMeme(campos) {
         y la mostraremos
     */
 
-    for (let i = 0; i <= campos.length; i++) {
+    for (let i = 0; i < campos.length; i++) {
         formdata.append(`boxes[${i}][text]`, campos[i]);
     }
 

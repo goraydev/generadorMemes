@@ -1,7 +1,7 @@
 import { boxCount, generarMeme, urlImagen } from "./apis.js";
 import { crearCajasTexto, formulario, mostrarAlerta } from "./interfaz.js";
 
-const btnCrear = document.querySelector('#crear');
+
 const contenedorImagen = document.querySelector('#contenedorImagen');
 let campos = [];
 

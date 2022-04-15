@@ -58,7 +58,7 @@ export function crearCajasTexto(cantidad) {
     const inputSubmit = document.querySelector('input');
     inputSubmit.type = 'submit';
     inputSubmit.value = 'Crear meme';
-    inputSubmit.className = 'bg-blue-500 py-1 px-2 cursor-pointer rounded';
+    inputSubmit.className = 'bg-blue-500 py-1 px-2 cursor-pointer rounded text-white';
 
     formulario.appendChild(inputSubmit);
 
@@ -75,13 +75,39 @@ export function mostrarAlerta() {
 
 
 export function mostrarResultado(url) {
-    const div = document.createElement('div');
+    const p = document.createElement('p');
+    p.className = 'my-2 font-bold text-lg';
+    p.textContent = 'Meme generado';
     const img = document.createElement('img');
     img.src = url;
 
-    div.appendChild(img);
+
+    const divLoad = document.createElement('div');
+    divLoad.innerHTML = `   
+        <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+        </div>
+    `;
+
     limpiarHtml();
-    resultado.appendChild(div);
+    resultado.appendChild(divLoad);
+    setTimeout(() => {
+        divLoad.remove();
+        resultado.appendChild(p);
+        resultado.appendChild(img);
+    }, 2000);
+
 }
 
 function limpiarHtml() {
