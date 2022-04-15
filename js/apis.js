@@ -1,3 +1,4 @@
+import { campos } from "./generarMeme.js";
 import { crearCajasTexto, mostrarMemes } from "./interfaz.js";
 
 //verificar el ID de la URL
@@ -22,10 +23,7 @@ export function consultaMemes() {
 }
 
 export function generarMeme() {
-    console.log(idMeme, boxCount);
-    console.log(urlImagen);
-
-    crearCajasTexto(boxCount);
+    console.log(campos);
 
     let myHeaders = new Headers();
     myHeaders.append("Cookie", "claim_key=I6gbyr2m6v2i3BbOSarjRQjOyApWEPtU");
@@ -34,8 +32,14 @@ export function generarMeme() {
     formdata.append("template_id", idMeme);
     formdata.append("username", "toheneb279");
     formdata.append("password", "toheneb279");
-    formdata.append("boxes[0][text]", "regueton");
-    formdata.append("boxes[2][text]", "rock");
+
+    for (let i = 0; i < campos.length; i++) {
+        
+
+    }
+
+    formdata.append("boxes[0][text]", "gerson");
+    formdata.append("boxes[2][text]", "yo");
     formdata.append("boxes[3][text]", "claro");
     formdata.append("boxes[4][text]", "si");
 

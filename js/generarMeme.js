@@ -1,8 +1,9 @@
 import { boxCount, generarMeme, urlImagen } from "./apis.js";
-import { crearCajasTexto, formulario } from "./interfaz.js";
+import { crearCajasTexto, formulario, mostrarAlerta } from "./interfaz.js";
 
 const btnCrear = document.querySelector('#crear');
 const contenedorImagen = document.querySelector('#contenedorImagen');
+export let campos = [];
 
 eventListeners();
 function eventListeners() {
@@ -15,6 +16,7 @@ function eventListeners() {
 
 
 function mostrarImagen() {
+
     const img = document.createElement('img');
     img.src = urlImagen;
     img.className = 'object-cover';
@@ -26,6 +28,21 @@ function mostrarImagen() {
 
 function validarIngreso(e) {
     e.preventDefault();
+
+    const caja = document.querySelectorAll('.caja');
+
+
+    for (let i = 0; i < caja.length; i++) {
+        if (caja[i].value === '') {
+            mostrarAlerta();
+            return;
+        }
+
+        campos = [...campos, caja[i].value];
+    }
     
+    generarMeme();
+
+
 }
 

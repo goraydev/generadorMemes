@@ -9,6 +9,7 @@ export function mostrarMemes(resultado) {
     memes.forEach(element => {
         const { box_count, name, url, id } = element;
 
+
         const div = document.createElement('div');
         div.className = 'border-2 border-slate-400 w-60 h-60  flex flex-col gap-2 items-center';
 
@@ -41,6 +42,7 @@ export function crearCajasTexto(cantidad) {
         const div = document.createElement('div');
         div.className = 'my-3';
         const inputCaja = document.createElement('input');
+        inputCaja.classList.add('caja');
         inputCaja.type = 'text';
         inputCaja.placeholder = 'Ingrese texto';
         inputCaja.id = i;
@@ -58,4 +60,12 @@ export function crearCajasTexto(cantidad) {
 
     formulario.appendChild(inputSubmit);
 
+}
+
+export function mostrarAlerta() {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Complete los campos',
+    })
 }
