@@ -6,7 +6,6 @@ export const parametrosURL = new URLSearchParams(window.location.search);
 export let idMeme = Number(parametrosURL.get('id'));
 export let boxCount = Number(parametrosURL.get('box_count'));
 export let urlImagen = parametrosURL.get('url');
-export const resultado = document.querySelector('#resultado');
 
 
 
@@ -23,7 +22,7 @@ export function consultaMemes() {
 }
 
 export function generarMeme(campos) {
-    console.log(campos);
+    
 
     let myHeaders = new Headers();
     myHeaders.append("Cookie", "claim_key=I6gbyr2m6v2i3BbOSarjRQjOyApWEPtU");
@@ -51,7 +50,7 @@ export function generarMeme(campos) {
     fetch("https://api.imgflip.com/caption_image", requestOptions)
         .then(response => response.json())
         .then(result => {
-            console.log(result.data.url);
+            
             mostrarResultado(result.data.url)
         })
         .catch(error => console.log('error', error));

@@ -1,5 +1,3 @@
-import { resultado } from "./apis.js";
-
 const contenenedorMemes = document.querySelector('#memes');
 export const formulario = document.querySelector('#formulario');
 
@@ -75,8 +73,10 @@ export function mostrarAlerta() {
 
 
 export function mostrarResultado(url) {
+    const contenedorImagen = document.querySelector('#contenedorImagen');
+
     const p = document.createElement('p');
-    p.className = 'my-2 font-bold text-lg';
+    p.className = 'my-2 font-bold text-lg text-center';
     p.textContent = 'Meme generado';
     const img = document.createElement('img');
     img.src = url;
@@ -101,17 +101,17 @@ export function mostrarResultado(url) {
     `;
 
     limpiarHtml();
-    resultado.appendChild(divLoad);
+    contenedorImagen.appendChild(divLoad);
     setTimeout(() => {
         divLoad.remove();
-        resultado.appendChild(p);
-        resultado.appendChild(img);
+        contenedorImagen.appendChild(p);
+        contenedorImagen.appendChild(img);
     }, 2000);
 
 }
 
 function limpiarHtml() {
-    while (resultado.firstChild) {
-        resultado.removeChild(resultado.firstChild);
+    while (contenedorImagen.firstChild) {
+        contenedorImagen.removeChild(contenedorImagen.firstChild);
     }
 }
