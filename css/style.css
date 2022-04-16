@@ -1,3 +1,7 @@
+
+
+
+
 body {
   overflow-x: hidden;
 }
@@ -6,6 +10,13 @@ body {
   max-width: 90%;
   width: 1200px;
   margin: 2rem auto 10rem;
+}
+
+.title {
+  background-color: #272d2d;
+  color: aliceblue;
+  padding: 1rem 0;
+  margin: 0;
 }
 
 .footer {
@@ -21,9 +32,15 @@ body {
 
 #formulario {
   grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 input[type="text"] {
+  width: 100%;
+  margin: 0 auto;
   border: 1px solid gray;
   padding: 0.5rem 1rem;
 }
