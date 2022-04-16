@@ -16,6 +16,7 @@ export function mostrarMemes(resultado) {
         const img = document.createElement('img');
         img.className = 'w-full object-cover h-40';
         img.src = url;
+        img.alt = 'meme';
 
         const pName = document.createElement('p');
         pName.textContent = `${name.slice(0, 20)}...`;
