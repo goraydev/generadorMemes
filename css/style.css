@@ -45,16 +45,37 @@ body {
 
 .arrow {
   position: absolute;
-  top: -1rem;
+  top: -2rem;
   margin: -2rem 0.5rem 0 0;
   right: 0;
   color: #272d2d;
   z-index: 2;
 }
-
 @media (min-width: 768px) {
   .arrow {
     margin: -2rem 5rem 0 0;
+  }
+}
+
+.arrow a svg {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  animation-name: arrowBoton;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes arrowBoton {
+  50% {
+    background-color: aliceblue;
+  }
+  100% {
+    background-color: rgba(59, 141, 246, 0.6);
   }
 }
 
