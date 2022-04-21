@@ -11,6 +11,10 @@
   border-radius: 5rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -37,6 +41,21 @@ body {
   color: aliceblue;
   padding: 2rem 0;
   text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  top: -1rem;
+  margin: -2rem 0.5rem 0 0;
+  right: 0;
+  color: #272d2d;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .arrow {
+    margin: -2rem 5rem 0 0;
+  }
 }
 
 #formulario {

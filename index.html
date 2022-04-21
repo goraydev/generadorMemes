@@ -25,13 +25,30 @@
     <title>Memes</title>
   </head>
   <body>
-    <h1 class="text-3xl title font-bold text-center"><a href="index.html">Generador de Memes</a></h1>
+    <h1 class="text-3xl title font-bold text-center" id="titulo">
+      <a href="index.html">Generador de Memes</a>
+    </h1>
     <div
       class="contenedor memes flex flex-wrap gap-2 justify-center"
       id="memes"
     ></div>
 
     <footer class="footer">
+      <div class="arrow">
+        <a href="index.html#titulo"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
+              clip-rule="evenodd"
+            /></svg
+        ></a>
+      </div>
       <p>
         Todos los derechos reservados&copy;<span id="year"></span>. Diseñado y
         desarrollado por Gerson Aguedo Yanac | GorayCode
