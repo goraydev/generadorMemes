@@ -1,0 +1,32 @@
+{
+    "name": "Generador de memes",
+    "short_name": "GM",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#16F0E0",
+    "theme_color":"#16F0E0",
+    "orientation":"portrait",
+    "icons":[
+        {
+            "src":"img/icons/smile-64.png",
+            "type":"image/png",
+            "sizes": "64x64"
+        },
+        {
+            "src":"img/icons/smile-128.png",
+            "type":"image/png",
+            "sizes": "128x128",
+            "purpose": "any maskable"
+        },
+        {
+            "src":"img/icons/smile-256.png",
+            "type":"image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src":"img/icons/smile-512.png",
+            "type":"image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
